@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import ReactDOM from "react-dom";
+import { Button } from "react-bootstrap";
+import CustomModal from "./CustomModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 /*
@@ -37,41 +37,7 @@ the test runner is in a tab on the right
 
 */
 
-export function CustomModal({ toggleVisibility, visible }) {
-  const el = document.createElement("div");
-
-  return ReactDOM.createPortal(
-    <Modal
-      show={visible}
-      onHide={() => toggleVisibility(false)}
-      backdrop="static"
-      keyboard={false}
-      autoFocus
-      enforceFocus
-      aria-labelledby="heading"
-      aria-describedby="description"
-    >
-      <Modal.Header id="heading" closeButton>
-        <Modal.Title>Modal title</Modal.Title>
-      </Modal.Header>
-      <Modal.Body id="description">
-        I will not close if you click outside me. Don't even try to press escape
-        key.
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={() => toggleVisibility(false)}>
-          Cancel
-        </Button>
-        <Button variant="primary" onClick={() => toggleVisibility(false)}>
-          Understood
-        </Button>
-      </Modal.Footer>
-    </Modal>,
-    el
-  );
-}
-
-export function App() {
+export default function App() {
   const [visible, toggleVisibility] = useState(false);
 
   return (
