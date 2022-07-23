@@ -1,2 +1,2 @@
-# Accessibility_Modal
+# Accessibilty_Modal
 Created with CodeSandbox
