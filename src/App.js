@@ -47,6 +47,7 @@ export default function App() {
       <Button variant="secondary" onClick={() => toggleVisibility(true)}>
         Open Modal
       </Button>
+      {/* show modal in the DOM only if it should be rendered */}
       {visible && (
         <CustomModal
           visible={visible}

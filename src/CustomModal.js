@@ -11,7 +11,9 @@ export default function CustomModal({ toggleVisibility, visible }) {
       onHide={() => toggleVisibility(false)}
       backdrop="static"
       keyboard={false}
+      // focus on the modal once it's opened
       autoFocus
+      // trap the focus in the modal for better accessibility
       enforceFocus
       aria-labelledby="heading"
       aria-describedby="description"
